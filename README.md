@@ -1,6 +1,6 @@
-# vue chrome extension example
+# Yorha New Tab Extension
 
-develop chrome extension with vue
+New Tab extension based on Nier Automata menu.
 
 ## Installation
 
