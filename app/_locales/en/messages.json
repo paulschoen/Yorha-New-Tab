@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "Yorha New Tab",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "YNT",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "A new tab designed to look like Nier Automata's ",
+    "description": "The description of the application"
+  },
+  "browserActionTitle": {
+    "message": "Yorha New Tab",
+    "description": "The title of the browser action button"
+  }
+}
