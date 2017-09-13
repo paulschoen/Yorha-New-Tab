@@ -5,6 +5,3 @@ npm-debug.log
 
 dist/
 packages/
-
-.*
-!/.gitignore
