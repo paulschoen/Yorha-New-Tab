@@ -28,12 +28,15 @@
           </div>
         </div>
       </div>
+      <div class="modals">
+      </div>
     </div>
 </template>
 
 <script>
 import NotePad from './notepad.vue';
 import ListBookmarks from './list-bookmarks.vue';
+import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
 
 export default {
@@ -46,7 +49,8 @@ export default {
   components: {
     ListBookmarks: ListBookmarks,
     NotePad: NotePad,
-    Clock: Clock
+    Clock: Clock,
+    Modal: Modal
   }
 }
 </script>
