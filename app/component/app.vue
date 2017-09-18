@@ -71,6 +71,9 @@ export default {
     margin-left: 2em;
     height: 600px;
   }
+  h1 {
+    -webkit-margin-before: 0;
+  }
   .clock-container {
     text-align: right;
   }
@@ -82,7 +85,7 @@ export default {
     text-shadow: 0.3rem 0.3rem 0 #bab5a1;
     display: block;
     font-size: 4em;
-    -webkit-margin-before: 0.67em;
+    -webkit-margin-before: 0;
     -webkit-margin-after: 0.67em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
