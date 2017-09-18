@@ -48,7 +48,7 @@
   margin-top: 2em;
 }
 
-.customButton {
+.custom-button {
   margin: 0.5em 0.7em;
   width: 90% !important;
   min-height: 1.5em;
@@ -57,7 +57,7 @@
   padding: 0 0.5em;
 }
 
-.customButton img {
+.custom-button img {
   opacity: 0;
   position: absolute;
   height: 41px;
@@ -67,7 +67,7 @@
   z-index: -5;
 }
 
-.customButton:hover img {
+.custom-button:hover img {
   opacity: 1;
   height: 41px;
   position: absolute;
@@ -82,7 +82,8 @@
   font-size: 1.5em;
   height: inherit;
   margin: 0;
-  padding: 0;
+  padding: 0.5em 0;
+  overflow-y: scroll;
 }
 
 .large-border {
@@ -106,4 +107,10 @@
   height: 500px;
   overflow: auto;
   overflow-x: hidden;
+}
+.top-sites-visited-figure {
+  margin-left: 2em;
+}
+figure .bookmark-wrapper {
+  margin: 0;
 }
