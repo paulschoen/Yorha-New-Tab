@@ -114,3 +114,12 @@
 figure .bookmark-wrapper {
   margin: 0;
 }
+.footer {
+  grid-column: span 3;
+  grid-row: 5;
+  height: 25px;
+  background-image: url("https://cdn.discordapp.com/attachments/177963198912266240/359188500840710147/header_pattern.png");
+  background-repeat: repeat-x;
+  background-size: 42px;
+  margin-top: 10px;
+}

@@ -52,6 +52,8 @@
             <NotePad></NotePad>
           </div>
         </div>
+        <Bottom>
+        </Bottom>
       </div>
       <div class="modals">
       </div>
@@ -65,6 +67,7 @@ import TopSites from './top-sites.vue';
 import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
 import ToolBar from './tool-bar.vue';
+import Bottom from './footer.vue';
 
 export default {
   data() {
@@ -79,13 +82,13 @@ export default {
     TopSites: TopSites,
     Clock: Clock,
     Modal: Modal,
-    ToolBar: ToolBar
+    ToolBar: ToolBar,
+    Bottom: Bottom
   }
 }
 </script>
 
 <style lang="css">
-<<<<<<< HEAD
   figure {
     margin-left: 2em;
     height: 600px;
@@ -93,8 +96,6 @@ export default {
   h1 {
     -webkit-margin-before: 0;
   }
-=======
->>>>>>> master
   .clock-container {
     text-align: right;
   }
