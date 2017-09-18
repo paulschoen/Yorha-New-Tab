@@ -9,24 +9,39 @@
   grid-auto-rows: minmax(1px, auto);
 }
 
+.tab-header{
+  grid-column: span 3;
+  grid-row: 1;
+}
+
+.repeat-border{
+  grid-column: span 3;
+  grid-row: 2;
+  height: 25px;
+  background-image: url("https://cdn.discordapp.com/attachments/177963198912266240/359188500840710147/header_pattern.png");
+  background-repeat: repeat-x;
+  background-size: 42px;
+  margin-top: 10px;
+}
+
 .head1 {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 3;
 }
 
 .head2 {
   grid-column: 3;
-  grid-row: 1;
+  grid-row: 3;
 }
 
 .col1 {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 4;
 }
 
 .col2 {
   grid-column: span 2 / 4;
-  grid-row: 2;
+  grid-row: 4;
 }
 
 .selection {

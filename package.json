@@ -60,6 +60,7 @@
     "yargs": "5.x.x"
   },
   "dependencies": {
+    "update": "^0.7.4",
     "vue-digital-clock": "^1.5.0",
     "vue-localstorage": "^0.4.1"
   }

@@ -1,6 +1,15 @@
 <template lang="html">
     <div class="container">
       <div class="grid">
+        <div class="tab-header">
+          <div class="large-border">
+            <div class="small-border">
+              <ToolBar></ToolBar>
+            </div>
+          </div>
+        </div>
+        <div class="repeat-border">
+        </div>
         <div class="head1">
           <h1>{{name}}</h1>
         </div>
@@ -38,6 +47,7 @@ import NotePad from './notepad.vue';
 import ListBookmarks from './list-bookmarks.vue';
 import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
+import ToolBar from './tool-bar.vue';
 
 export default {
   data() {
@@ -50,7 +60,8 @@ export default {
     ListBookmarks: ListBookmarks,
     NotePad: NotePad,
     Clock: Clock,
-    Modal: Modal
+    Modal: Modal,
+    ToolBar: ToolBar
   }
 }
 </script>
