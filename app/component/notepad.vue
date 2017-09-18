@@ -2,7 +2,7 @@
   <div>
     <div class="large-border">
       <div class="small-border">
-        <figure>
+        <figure class="notepad-figure">
           <figcaption><span>&#9632</span> Note Pad</figcaption>
           <hr style="margin: 0; width: 98%;">
           <textarea class="text-area" v-model="text"></textarea>
@@ -35,6 +35,10 @@ export default {
 </script>
 
 <style lang="css">
+  .notepad-figure {
+    margin-left: 2em;
+    height: 600px;
+  }
   textarea {
     overflow-y: scroll;
     padding: 1em 0;

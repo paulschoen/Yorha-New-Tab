@@ -1,12 +1,12 @@
 <template lang="html">
-    <figure class="top-sites-panel">
-      <div v-if="topSites" v-for="topSite in topSites">
-        <a v-bind:href="topSite.url" class="customButton">
-        <button style="margin-top: 0px;" type="button" class="customButton">
-          <span>&#9632</span> {{topSite.title}}</button>
-        </a>
-      </div>
-    </figure>
+  <div class="top-sites-panel">
+    <div v-if="topSites" v-for="topSite in topSites">
+      <a v-bind:href="topSite.url" class="customButton">
+      <button style="margin-top: 0px;" type="button" class="customButton">
+        <span>&#9632</span> {{topSite.title}}</button>
+      </a>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -30,5 +30,6 @@
 <style>
   .top-sites-panel {
     height: auto;
+    background-color: #dcd8c0;
   }
 </style>

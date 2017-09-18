@@ -93,3 +93,9 @@
   overflow: auto;
   overflow-x: hidden;
 }
+.top-sites-visited-figure {
+  margin-left: 2em;
+}
+figure .bookmark-wrapper {
+  margin: 0;
+}
