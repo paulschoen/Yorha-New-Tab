@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="top-sites-panel">
     <div v-if="topSites" v-for="topSite in topSites">
-      <a v-bind:href="topSite.url" class="customButton">
-      <button style="margin-top: 0px;" type="button" class="customButton">
+      <a v-bind:href="topSite.url" class="custom-button">
+      <button style="margin-top: 0px;" type="button" class="custom-button">
         <span>&#9632</span> {{topSite.title}}</button>
       </a>
     </div>

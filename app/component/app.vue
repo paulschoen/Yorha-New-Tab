@@ -21,7 +21,7 @@
               </div>
             </div>
           </div>
-          <div class="selection">
+          <!-- <div class="selection">
             <div style="padding-top: 4em">
               <div class="large-border">
                 <div class="small-border">
@@ -33,17 +33,10 @@
                       </div>
                       <hr style="margin: 0; width: 98%;">
                   </figure>
-                  <!-- <div class="list-panel">
-                    <hr style="margin: 0; width: 98%;">
-                    <div class="bookmark-wrapper">
-                      <TopSites></TopSites>
-                    </div>
-                    <hr style="margin: 0; width: 98%;">
-                  </div> -->
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="col2">
           <div class="selection">
@@ -104,7 +97,7 @@ export default {
   .list-panel .top-sites-panel {
     padding: 0.5em 0;
   }
-  .list-panel .customButton {
+  .list-panel .custom-button {
     width: 95% !important;
   }
   .list-panel button {
@@ -124,7 +117,7 @@ export default {
   .list-panel .top-sites-panel {
     padding: 0.5em 0;
   }
-  .list-panel .customButton {
+  .list-panel .custom-button {
     width: 100%;
   }
   .list-panel button {

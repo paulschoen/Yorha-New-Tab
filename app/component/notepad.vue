@@ -14,10 +14,31 @@
 </template>
 
 <script>
-import VueLocalStorage from 'vue-localstorage'
-import Vue from 'vue'
+import VueLocalStorage from 'vue-localstorage';
+import Vue from 'vue';
+import $ from 'jquery';
 
 Vue.use(VueLocalStorage)
+
+$("textarea").keydown(function(e) {
+    if(e.keyCode === 9) {
+        var start = this.selectionStart;
+            end = this.selectionEnd;
+
+        var $this = $(this);
+
+        $this.val($this.val().substring(0, start)
+                    + "\t"
+                    + $this.val().substring(end));
+
+        this.selectionStart = this.selectionEnd = start + 1;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        return false;
+    }
+});
 
 export default {
   data:function(){
