@@ -11,15 +11,15 @@
         <div class="repeat-border">
         </div>
         <div class="head1">
-          <h1>{{name}}</h1>
+          <h1 id="title" class="animated fadeInLeft">{{name}}</h1>
         </div>
         <div class="head2">
-          <div class="clock-container">
+          <div class="clock-container animated fadeIn">
             <Clock displaySeconds=true></Clock>
           </div>
         </div>
         <div class="col1">
-          <div class="selection">
+          <div class="selection animated fadeInLeft">
             <div style="padding-top: 4em">
               <div class="large-border">
                 <div class="small-border">
@@ -49,7 +49,7 @@
         </div>
         <div class="col2">
           <div class="selection">
-            <NotePad></NotePad>
+            <NotePad class="animated fadeIn"></NotePad>
           </div>
         </div>
         <Bottom>
@@ -68,6 +68,13 @@ import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
 import ToolBar from './tool-bar.vue';
 import Bottom from './footer.vue';
+
+function scrambleTitle() {
+  return Scramble.select('#title')
+    .wait(1000)
+    .setText('New Tab')
+    .descramble()
+}
 
 export default {
   data() {

@@ -60,6 +60,7 @@
     "yargs": "5.x.x"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "jquery": "^3.2.1",
     "vue-digital-clock": "^1.5.0",
     "vue-localstorage": "^0.4.1"

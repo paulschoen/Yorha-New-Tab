@@ -123,3 +123,6 @@ figure .bookmark-wrapper {
   background-size: 42px;
   margin-top: 10px;
 }
+.display-none {
+  display: none;
+}
