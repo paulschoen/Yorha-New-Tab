@@ -18,6 +18,7 @@
     "newtab": "pages/index.html"
   },
   "permissions": [
-    "bookmarks"
+    "bookmarks",
+    "topSites"
   ]
 }

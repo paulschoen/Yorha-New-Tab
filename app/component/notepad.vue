@@ -4,7 +4,9 @@
       <div class="small-border">
         <figure>
           <figcaption><span>&#9632</span> Note Pad</figcaption>
+          <hr style="margin: 0; width: 98%;">
           <textarea class="text-area" v-model="text"></textarea>
+          <hr style="margin: 0; width: 98%;">
         </figure>
       </div>
     </div>
@@ -33,5 +35,8 @@ export default {
 </script>
 
 <style lang="css">
-
+  textarea {
+    overflow-y: scroll;
+    padding: 1em 0;
+  }
 </style>

@@ -21,6 +21,17 @@
               </div>
             </div>
           </div>
+          <!-- <div class="selection">
+            <div style="padding-top: 4em">
+              <div class="large-border">
+                <div class="small-border">
+                  <div class="bookmark-wrapper extend-panel">
+                    <TopSites></TopSites>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
         <div class="col2">
           <div class="selection">
@@ -36,6 +47,7 @@
 <script>
 import NotePad from './notepad.vue';
 import ListBookmarks from './list-bookmarks.vue';
+import TopSites from './top-sites.vue';
 import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
 
@@ -49,6 +61,7 @@ export default {
   components: {
     ListBookmarks: ListBookmarks,
     NotePad: NotePad,
+    TopSites: TopSites,
     Clock: Clock,
     Modal: Modal
   }
@@ -75,5 +88,9 @@ export default {
     -webkit-margin-after: 0.67em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
+  }
+  .extend-panel {
+    background-color: #dcd8c0;
+    padding: 1em;
   }
 </style>
