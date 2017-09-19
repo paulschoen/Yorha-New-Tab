@@ -1,15 +1,20 @@
 <template lang="html">
   <div class='container'>
     <div v-if="tabs" v-for="tab in tabs">
-      <button style="margin-top: 0px;" type="button" class='tabs'  @click="$event.target.classList.toggle('active')">
-        <p class='tabstext'>{{tab.color}}</p>
+      <button style="margin-top: 0px;" type="button" class='tabs' v-bind:class="[tab.name]" v-on:click="greet(tab.name)">
+        <p class='tabstext'>{{tab.name}}</p>
       </button>
     </div>
   </div>
 </template>
 
 <script>
-var tabs = [{color:'red'},{color:'orange'},{color:'yellow'},{color:'green'},{color:'blue'},{color:'indigo'}]
+var tabs = [{name:'tab1'},
+            {name:'tab2'},
+            {name:'tab3'},
+            {name:'tab4'},
+            {name:'tab5'},
+            {name:'tab6'}]
 
 export default {
   data() {
@@ -17,6 +22,15 @@ export default {
       tabs
     }
   },
+  methods: {
+      greet: function (event) {
+        console.log(event)
+        document.querySelectorAll(".tabs").forEach(function(i){
+          i.classList.remove('active')
+        })
+        document.querySelector("."+event).classList.toggle('active')
+      }
+    }
 }
 </script>
 
