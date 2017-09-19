@@ -1,8 +1,8 @@
 <template lang="html">
   <div>
     <div v-if="bookmarks" v-for="bookmark in bookmarks">
-      <a v-bind:href="bookmark.url" class="customButton">
-      <button style="margin-top: 0px;" type="button" class="customButton">
+      <a v-bind:href="bookmark.url" class="custom-button">
+      <button style="margin-top: 0px;" type="button" class="custom-button">
         <span>&#9632</span> {{bookmark.title}}</button>
       </a>
     </div>
