@@ -11,13 +11,14 @@
         <div class="repeat-border">
         </div>
         <div class="head1">
-          <h1 id="title" class="animated fadeInLeft">
+          <h1 id="title" class="animate fadeInLeft">
             <vue-typer
               :text='name'
               :repeat='0'
               :typeDelay='40'
               :pre-type-delay='1000'
-              @completed='onCompleted'></vue-typer></h1>
+              @completed='onCompleted'
+              caret-animation='solid'></vue-typer></h1>
         </div>
         <div class="head2">
           <div class="clock-container animated fadeIn">
@@ -79,10 +80,18 @@ import { VueTyper } from 'vue-typer';
 function randomCarrot(component, text) {
   var arr = text.split('');
   var run = true;
-  component.animation = window.requestAnimationFrame(function(frame) {
+  // component.animation = window.requestAnimationFrame(function(frame) {
+  //   var char = arr[Math.floor(Math.random()*arr.length)];
+  //   document.querySelector('.custom.caret').innerHTML = char;
+  // })
+  document.querySelector('.custom.caret').classList.add('display-none');
+  setTimeout(function(){
+    document.querySelector('.custom.caret').classList.remove('display-none');
+  },1000)
+  window.setInterval(function(){
     var char = arr[Math.floor(Math.random()*arr.length)];
     document.querySelector('.custom.caret').innerHTML = char;
-  })
+  }, 10)
 }
 
 export default {

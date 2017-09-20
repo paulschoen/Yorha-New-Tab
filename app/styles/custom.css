@@ -124,7 +124,7 @@ figure .bookmark-wrapper {
   margin-top: 10px;
 }
 .display-none {
-  display: none;
+  display: none !important;
 }
 .vue-typer .custom.caret {
   background: transparent;

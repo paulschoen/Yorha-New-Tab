@@ -4,7 +4,7 @@
         <a v-bind:href="bookmark.url" class="custom-button">
         <button style="margin-top: 0px;" type="button" class="custom-button">
           <!-- <span class="fadeInLeft"><span>&#9632</span> {{bookmark.title}}</span></button> -->
-          <vue-typer :text='bookmark.title' :typeDelay='30' :repeat='0' :pre-type-delay='1000'></vue-typer>
+          <vue-typer :text='bookmark.title' :typeDelay='30' :repeat='0' :pre-type-delay='1000' caret-animation='solid'></vue-typer>
         </button>
         </a>
       </div>
@@ -13,7 +13,26 @@
 
 <script>
 import $ from 'jquery';
-import { VueTyper } from 'vue-typer';
+import {
+  VueTyper
+} from 'vue-typer';
+
+// function randomCarrot(component, text) {
+//   var arr = text.replace(/\s/g, '').split('');
+//   var char = arr[Math.floor(Math.random() * arr.length)];
+//   var run = true;
+//
+//   var spanArray = document.getElementsByClassName('caret');
+//   for (var i = 0; i < spanArray.length; i++) {
+//     spanArray[i].classList.add('display-none');
+//     spanArray[i].classList.remove('display-none');
+//
+//     window.setInterval(function(){
+//       spanArray[i].innerHTML = arr[Math.floor(Math.random() * arr.length)];
+//     },50)
+//   }
+// }
+
 
 function getBookmarks() {
   var returnArray = [];
@@ -26,11 +45,11 @@ function getBookmarks() {
 }
 
 function delayAnimation() {
-  document.querySelectorAll('div.fadeInLeft').forEach(function(elem, i){
-    setTimeout(function(){
+  document.querySelectorAll('div.fadeInLeft').forEach(function(elem, i) {
+    setTimeout(function() {
       elem.classList.remove('display-none');
       elem.classList.add('animated');
-     }, (i+1) * 20);
+    }, (i + 1) * 20);
   });
 }
 
@@ -44,9 +63,10 @@ export default {
   components: {
     VueTyper
   },
-  updated: function () {
+  updated: function() {
     this.$nextTick(function() {
       delayAnimation()
+      // randomCarrot(this, 'This is a random string for your bookmarks scrambler, Congrats!')
     });
   }
 }
