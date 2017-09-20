@@ -16,7 +16,7 @@
               :text='name'
               :repeat='0'
               :typeDelay='40'
-              :pre-type-delay='1000'
+              :pre-type-delay='500'
               @completed='onCompleted'
               caret-animation='solid'></vue-typer></h1>
         </div>
@@ -87,11 +87,11 @@ function randomCarrot(component, text) {
   document.querySelector('.custom.caret').classList.add('display-none');
   setTimeout(function(){
     document.querySelector('.custom.caret').classList.remove('display-none');
-  },1000)
+  },500)
   window.setInterval(function(){
     var char = arr[Math.floor(Math.random()*arr.length)];
     document.querySelector('.custom.caret').innerHTML = char;
-  }, 10)
+  }, 40)
 }
 
 export default {

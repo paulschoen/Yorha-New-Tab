@@ -4,7 +4,7 @@
         <a v-bind:href="bookmark.url" class="custom-button">
         <button style="margin-top: 0px;" type="button" class="custom-button">
           <!-- <span class="fadeInLeft"><span>&#9632</span> {{bookmark.title}}</span></button> -->
-          <vue-typer :text='bookmark.title' :typeDelay='30' :repeat='0' :pre-type-delay='1000' caret-animation='solid'></vue-typer>
+          <vue-typer :text='bookmark.title' :typeDelay='30' :repeat='0' :pre-type-delay='500' caret-animation='solid'></vue-typer>
         </button>
         </a>
       </div>
@@ -17,21 +17,26 @@ import {
   VueTyper
 } from 'vue-typer';
 
-// function randomCarrot(component, text) {
-//   var arr = text.replace(/\s/g, '').split('');
-//   var char = arr[Math.floor(Math.random() * arr.length)];
-//   var run = true;
-//
-//   var spanArray = document.getElementsByClassName('caret');
-//   for (var i = 0; i < spanArray.length; i++) {
-//     spanArray[i].classList.add('display-none');
-//     spanArray[i].classList.remove('display-none');
-//
-//     window.setInterval(function(){
-//       spanArray[i].innerHTML = arr[Math.floor(Math.random() * arr.length)];
-//     },50)
-//   }
-// }
+function randomCarrot(component, text) {
+  var arr = text.replace(/\s/g, '').split('');
+  var char = arr[Math.floor(Math.random() * arr.length)];
+  var run = true;
+
+  var spanArray = document.getElementsByClassName('caret');
+
+  $('.caret').each(function(){
+    var caret = this;
+    $(caret).addClass('display-none');
+
+    setTimeout(function(){
+      $(caret).removeClass('display-none')
+    }, 500)
+    window.setInterval(() => {
+      caret.innerHTML = arr[Math.floor(Math.random() * arr.length)];
+    },50)
+  })
+
+}
 
 
 function getBookmarks() {
@@ -66,7 +71,7 @@ export default {
   updated: function() {
     this.$nextTick(function() {
       delayAnimation()
-      // randomCarrot(this, 'This is a random string for your bookmarks scrambler, Congrats!')
+      randomCarrot(this, 'This is a random string for your bookmarks scrambler, Congrats!')
     });
   }
 }
