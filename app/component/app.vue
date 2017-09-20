@@ -11,7 +11,13 @@
         <div class="repeat-border">
         </div>
         <div class="head1">
-          <h1 id="title" class="animated fadeInLeft">{{name}}</h1>
+          <h1 id="title" class="animated fadeInLeft">
+            <vue-typer
+              :text='name'
+              :repeat='0'
+              :typeDelay='40'
+              :pre-type-delay='1000'
+              @completed='onCompleted'></vue-typer></h1>
         </div>
         <div class="head2">
           <div class="clock-container animated fadeIn">
@@ -68,19 +74,34 @@ import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
 import ToolBar from './tool-bar.vue';
 import Bottom from './footer.vue';
+import { VueTyper } from 'vue-typer';
 
-function scrambleTitle() {
-  return Scramble.select('#title')
-    .wait(1000)
-    .setText('New Tab')
-    .descramble()
+function randomCarrot(component, text) {
+  var arr = text.split('');
+  var run = true;
+  component.animation = window.requestAnimationFrame(function(frame) {
+    var char = arr[Math.floor(Math.random()*arr.length)];
+    document.querySelector('.custom.caret').innerHTML = char;
+  })
 }
 
 export default {
   data() {
     return {
       name: 'New Tab',
-      square: '&#9632'
+      square: '&#9632',
+      textComplete: false,
+      animation: undefined
+    }
+  },
+  created() {
+    this.$nextTick(function () {
+      randomCarrot(this, this.name)
+    })
+  },
+  methods: {
+    onCompleted() {
+      window.cancelAnimationFrame(this.animation);
     }
   },
   components: {
@@ -90,7 +111,8 @@ export default {
     Clock: Clock,
     Modal: Modal,
     ToolBar: ToolBar,
-    Bottom: Bottom
+    Bottom: Bottom,
+    VueTyper
   }
 }
 </script>

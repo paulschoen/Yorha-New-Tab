@@ -126,3 +126,6 @@ figure .bookmark-wrapper {
 .display-none {
   display: none;
 }
+.vue-typer .custom.caret {
+  background: transparent;
+}
