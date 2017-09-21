@@ -22,25 +22,25 @@ var tabs = [{
     active: true,
   },
   {
-    name: 'Most Visited Sites',
+    name: 'Top Visited Sites',
     active: false,
   },
   {
     name: 'tab3',
     active: false,
   },
-  {
-    name: 'tab4',
-    active: false,
-  },
-  {
-    name: 'tab5',
-    active: false,
-  },
-  {
-    name: 'tab6',
-    active: false,
-  }
+  // {
+  //   name: 'tab4',
+  //   active: false,
+  // },
+  // {
+  //   name: 'tab5',
+  //   active: false,
+  // },
+  // {
+  //   name: 'tab6',
+  //   active: false,
+  // }
 ]
 
 
@@ -78,8 +78,8 @@ export default {
 <style lang="css">
 .grid .container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 34px;
   height: 35px;
   margin-top: 10px;
 }

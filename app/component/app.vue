@@ -25,9 +25,8 @@
           </div>
         </div>
         <div class="col1">
-          <div class="selection animated fadeInLeft">
-            <div style="padding-top: 2em;
-                        overflow-x: hidden;
+          <div style="padding: 3em;" class="selection animated fadeInLeft">
+            <div style="overflow-x: hidden;
                         overflow-y: auto;
                         height: 500px;
                         width: 95%;">
@@ -40,28 +39,14 @@
               </div>
             </div>
           </div>
-          <!-- <div class="selection">
-            <div style="padding-top: 4em">
-              <div class="large-border">
-                <div class="small-border">
-                  <figure class="top-sites-visited-figure">
-                    <figcaption>Top Sites Visited</figcaption>
-                      <hr style="margin: 0; width: 98%;">
-                      <div class="bookmark-wrapper list-panel">
-                        <TopSites></TopSites>
-                      </div>
-                      <hr style="margin: 0; width: 98%;">
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
         <div class="col2">
-          <div class="selection">
-            <NotePad v-if="renderNotePad" class="animated fadeIn"></NotePad>
-            <TopSites v-if="renderMostVisitedSites" class="animated fadeIn"></TopSites>
+          <div  v-if="renderNotePad" class="selection">
+            <NotePad class="animated fadeIn"></NotePad>
           </div>
+        </div>
+        <div v-if="renderMostVisitedSites" class="col-only-2">
+          <TopSites  class="animated fadeIn"></TopSites>
         </div>
         <Bottom>
         </Bottom>
@@ -135,7 +120,7 @@ export default {
         this.renderNotePad = false
       }
 
-      if (activeTab === 'Most Visited Sites') {
+      if (activeTab === 'Top Visited Sites') {
         this.renderMostVisitedSites = true
       } else {
         this.renderMostVisitedSites = false
