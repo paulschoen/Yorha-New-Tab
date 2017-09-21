@@ -4,7 +4,7 @@
         <div class="tab-header">
           <div class="large-border">
             <div class="small-border">
-              <ToolBar></ToolBar>
+              <ToolBar ref="activeTab"></ToolBar>
             </div>
           </div>
         </div>
@@ -17,7 +17,6 @@
               :repeat='0'
               :typeDelay='40'
               :pre-type-delay='500'
-              @completed='onCompleted'
               caret-animation='solid'></vue-typer></h1>
         </div>
         <div class="head2">
@@ -56,7 +55,8 @@
         </div>
         <div class="col2">
           <div class="selection">
-            <NotePad class="animated fadeIn"></NotePad>
+            <NotePad v-if="renderNotePad" class="animated fadeIn"></NotePad>
+            <TopSites v-if="renderMostVisitedSites" class="animated fadeIn"></TopSites>
           </div>
         </div>
         <Bottom>
@@ -75,7 +75,13 @@ import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
 import ToolBar from './tool-bar.vue';
 import Bottom from './footer.vue';
-import { VueTyper } from 'vue-typer';
+import {
+  VueTyper
+} from 'vue-typer';
+import VueLocalStorage from 'vue-localstorage';
+import Vue from 'vue';
+
+Vue.use(VueLocalStorage)
 
 function randomCarrot(component, text) {
   var arr = text.split('');
@@ -85,11 +91,11 @@ function randomCarrot(component, text) {
   //   document.querySelector('.custom.caret').innerHTML = char;
   // })
   document.querySelector('.custom.caret').classList.add('display-none');
-  setTimeout(function(){
+  setTimeout(function() {
     document.querySelector('.custom.caret').classList.remove('display-none');
-  },500)
-  window.setInterval(function(){
-    var char = arr[Math.floor(Math.random()*arr.length)];
+  }, 500)
+  window.setInterval(function() {
+    var char = arr[Math.floor(Math.random() * arr.length)];
     document.querySelector('.custom.caret').innerHTML = char;
   }, 40)
 }
@@ -100,17 +106,37 @@ export default {
       name: 'New Tab',
       square: '■',
       textComplete: false,
-      animation: undefined
+      activeTab: Vue.localStorage.get('activeTab'),
+      renderNotePad: false,
+      renderMostVisitedSites: false
     }
   },
   created() {
-    this.$nextTick(function () {
+    this.$nextTick(function() {
       randomCarrot(this, this.name)
     })
   },
+  mounted() {
+    if (this.activeTab) {
+      this.setAppActiveTab(this.activeTab)
+    }
+  },
   methods: {
-    onCompleted() {
-      window.cancelAnimationFrame(this.animation);
+    setAppActiveTab: function(newActiveTab) {
+      var activeTab = newActiveTab;
+
+      if (activeTab === 'Note Pad') {
+        this.renderNotePad = true
+      } else {
+        this.renderNotePad = false
+      }
+
+      if (activeTab === 'Most Visited Sites') {
+        this.renderMostVisitedSites = true
+      } else {
+        this.renderMostVisitedSites = false
+      }
+      return Vue.localStorage.set('activeTab', activeTab);
     }
   },
   components: {
