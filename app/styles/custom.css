@@ -129,3 +129,6 @@ figure .bookmark-wrapper {
 .vue-typer .custom.caret {
   background: transparent;
 }
+span.typed{
+  color: inherit !important;
+}

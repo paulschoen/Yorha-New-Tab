@@ -1,10 +1,10 @@
 <template lang="html">
-  <div>
+  <div style="padding: 0.5em">
       <div style="padding: 0" v-if="bookmarks" v-for="bookmark in bookmarks" class="fadeInLeft display-none">
         <a v-bind:href="bookmark.url" class="custom-button">
         <button style="margin-top: 0px;" type="button" class="custom-button">
           <!-- <span class="fadeInLeft"><span>&#9632</span> {{bookmark.title}}</span></button> -->
-          <vue-typer :text='bookmark.title' :typeDelay='30' :repeat='0' :pre-type-delay='500' caret-animation='solid'></vue-typer>
+          <vue-typer :text='square+bookmark.title' :typeDelay='10' :repeat='0' :pre-type-delay='500' caret-animation='solid'></vue-typer>
         </button>
         </a>
       </div>
@@ -62,7 +62,8 @@ export default {
   data() {
     const bookmarks = getBookmarks();
     return {
-      bookmarks
+      bookmarks,
+      square: '■ '
     }
   },
   components: {

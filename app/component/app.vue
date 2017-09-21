@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       name: 'New Tab',
-      square: '&#9632',
+      square: '■',
       textComplete: false,
       animation: undefined
     }
