@@ -15,7 +15,7 @@
             <vue-typer
               :text='name'
               :repeat='0'
-              :typeDelay='40'
+              :typeDelay='50'
               :pre-type-delay='500'
               caret-animation='solid'></vue-typer></h1>
         </div>
@@ -26,7 +26,11 @@
         </div>
         <div class="col1">
           <div class="selection animated fadeInLeft">
-            <div style="padding-top: 4em">
+            <div style="padding-top: 2em;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                        height: 500px;
+                        width: 95%;">
               <div class="large-border">
                 <div class="small-border">
                   <div class="bookmark-wrapper ">
@@ -97,7 +101,7 @@ function randomCarrot(component, text) {
   window.setInterval(function() {
     var char = arr[Math.floor(Math.random() * arr.length)];
     document.querySelector('.custom.caret').innerHTML = char;
-  }, 40)
+  }, 50)
 }
 
 export default {
