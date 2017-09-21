@@ -72,6 +72,42 @@
   z-index: -5;
 }
 
+img.white-arrow {
+  opacity: 0;
+  position: absolute;
+  height: 41px;
+  left: 0px;
+  top: -4px;
+  z-index: -5;
+}
+
+.active img.white-arrow {
+  opacity: 1;
+  position: absolute;
+  height: 41px;
+  left: -48px;
+  top: -4px;
+  z-index: 5;
+}
+
+button.active .black-arrow {
+  opacity: 0 !important;
+  position: absolute;
+  height: 41px;
+  left: -48px;
+  top: -4px;
+  z-index: 5;
+}
+
+button.active:hover .black-arrow {
+  opacity: 0 !important;
+  position: absolute;
+  height: 41px;
+  left: -48px;
+  top: -4px;
+  z-index: 5;
+}
+
 .custom-button:hover img {
   opacity: 1;
   height: 41px;
@@ -154,7 +190,7 @@ button:hover .arrow {
   opacity: 1;
   height: 41px;
   position: absolute;
-  left: -50px;
+  left: -48px;
   top: -2px;
   transition: opacity 3s ease-in-out;
   z-index: 2;
