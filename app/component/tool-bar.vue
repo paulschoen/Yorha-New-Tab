@@ -62,6 +62,7 @@ export default {
     }
   },
   methods: {
+<<<<<<< Updated upstream
     setActive: function(selectedTab) {
       var tabs = this.tabs;
       var activeTab = this.activeTab;
@@ -71,6 +72,14 @@ export default {
       selectedTab.active = true;
       activeTab = selectedTab.name
       this.$parent.setAppActiveTab(activeTab);
+=======
+      greet: function (event) {
+        document.querySelectorAll(".tabs").forEach(function(i){
+          i.classList.remove('active')
+        })
+        document.querySelector("."+event).classList.toggle('active')
+      }
+>>>>>>> Stashed changes
     }
   }
 }
