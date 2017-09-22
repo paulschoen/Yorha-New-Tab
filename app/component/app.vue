@@ -11,13 +11,14 @@
         <div class="repeat-border">
         </div>
         <div class="head1">
-          <h1 id="title" class="animate fadeInLeft">
+          <h1 id="title" style="text-align:left;float:left;" class="animate fadeInLeft">
             <vue-typer
               :text='name'
               :repeat='0'
               :typeDelay='50'
               :pre-type-delay='500'
-              caret-animation='solid'></vue-typer></h1>
+              caret-animation='solid'></vue-typer>
+            </h1>
         </div>
         <div class="head2">
           <div class="clock-container animated fadeIn">
