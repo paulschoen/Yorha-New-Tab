@@ -3,7 +3,8 @@
     <div v-if="tabs" v-for="tab in tabs">
       <button style="margin-top: 0px;" type="button" class='tabs' v-bind:class="[ tab.active ? 'active' : '']" v-on:click="setActive(tab)">
         <p class='tabstext'>{{tab.name}}</p>
-        <img class="arrow animated fadeIn" src="/images/arrow.png" alt="arrow">
+        <img class="black-arrow arrow animated fadeIn" src="/images/arrow.png" alt="arrow">
+        <img class="white-arrow animated fadeIn" src="/images/white_arrow.png" alt="white arrow">
       </button>
     </div>
   </div>
