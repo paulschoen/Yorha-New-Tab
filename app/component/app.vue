@@ -25,16 +25,14 @@
           </div>
         </div>
         <div class="col1">
-          <div style="padding: 3em;" class="selection animated fadeInLeft">
+          <div class="selection animated fadeInLeft bookmark-wrapper">
             <div style="overflow-x: hidden;
                         overflow-y: auto;
                         height: 500px;
                         width: 95%;">
               <div class="large-border">
                 <div class="small-border">
-                  <div class="bookmark-wrapper ">
-                      <ListBookmarks></ListBookmarks>
-                  </div>
+                  <ListBookmarks></ListBookmarks>
                 </div>
               </div>
             </div>

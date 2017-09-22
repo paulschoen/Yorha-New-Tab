@@ -109,7 +109,11 @@
 }
 
 .bookmark-wrapper {
-  /*height: 500px;*/
+  padding: 3em 3em 3em 0;
+}
+.inside-panel-button{
+  background: transparent !important;
+  margin-top: 0px;
 }
 .top-sites-visited-figure {
   margin-left: 2em;
@@ -124,12 +128,14 @@ figure .bookmark-wrapper {
   margin: 0 1em;;
   font-size:24px;
   text-align:center;
-  position:fixed;    /*Here's what sticks it*/
-  bottom:0;          /*to the bottom of the window*/
+  /*position:fixed;    /*Here's what sticks it*/
+  /*bottom:0;          /*to the bottom of the window*/
   left:0;
   background-image: url("https://cdn.discordapp.com/attachments/177963198912266240/359188500840710147/header_pattern.png");
   background-repeat: repeat-x;
   background-size: 42px;
+  grid-row: 5;
+  grid-column: span 3;
 }
 .display-none {
   display: none !important;
@@ -158,4 +164,18 @@ button:hover .arrow {
   top: -2px;
   transition: opacity 3s ease-in-out;
   z-index: 2;
+}
+.button-panel-line{
+  margin: 0;
+  width: 98%;
+  margin-left:8px;
+}
+.inside-panel-container{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-left: 0px !important;
+}
+.inside-panel-offset{
+  padding: 1em 0;
+  margin-left: -27px !important;
 }
