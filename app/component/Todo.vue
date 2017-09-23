@@ -19,7 +19,7 @@ import CreateTodo from './createTodo.vue'
 export default {
   data(){
     return {
-      renderCreateTodo: false
+      renderCreateTodo: true
     }
   },
   components:{
@@ -33,9 +33,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 25px;
-}
-.todo-input{
-  border: 1px solid !important;
 }
 .add-todo-button{
   float:right;

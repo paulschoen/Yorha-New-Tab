@@ -232,3 +232,8 @@ button:hover .arrow {
     margin-top: 20px;
   }
 }
+@media only screen and (max-width: 1440px) {
+  .custom-button{
+    font-size: 1.25em !important;
+  }
+}
