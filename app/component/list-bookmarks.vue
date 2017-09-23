@@ -3,7 +3,7 @@
       <div style="padding: 0" v-if="bookmarks" v-for="bookmark in bookmarks" class="fadeInLeft display-none">
         <a v-bind:href="bookmark.url" class="custom-button">
         <button style="margin-top: 0px;" type="button" class="custom-button">
-          <vue-typer :text='square+bookmark.title' :typeDelay='50' :repeat='0' :pre-type-delay='500' caret-animation='solid'></vue-typer>
+          <vue-typer :text='square+bookmark.title' :typeDelay='1' :repeat='0' :pre-type-delay='250' caret-animation='solid'></vue-typer>
           <img class="arrow animated fadeIn" src="/images/arrow.png" alt="arrow">
         </button>
         </a>
@@ -30,10 +30,10 @@ function randomCarrot(component, text) {
 
     setTimeout(function(){
       $(caret).removeClass('display-none')
-    }, 500)
+    }, 250)
     window.setInterval(() => {
       caret.innerHTML = arr[Math.floor(Math.random() * arr.length)];
-    },50)
+    },100)
   })
 
 }
@@ -42,8 +42,15 @@ function randomCarrot(component, text) {
 function getBookmarks() {
   var returnArray = [];
   chrome.bookmarks.getTree(function(itemTree) {
-    itemTree[0].children[0].children.forEach(
-      child => returnArray.push(child)
+    itemTree[0].children[0].children.forEach(function(child) {
+        if (child.children) {
+          return true;
+        }
+        if (child.index > 19) {
+          return true;
+        }
+        returnArray.push(child);
+      }
     );
   });
   return returnArray;
