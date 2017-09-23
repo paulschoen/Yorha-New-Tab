@@ -1,5 +1,7 @@
 .container {
   margin: 0px 2em;
+  height: 100%;
+  min-height: 100%;
 }
 
 .grid {
@@ -22,6 +24,12 @@
   background-repeat: repeat-x;
   background-size: 42px;
   margin-top: 10px;
+}
+
+.repeat-border:before {
+  left: -20px;
+  right: 20px;
+  border-top: 1px solid black;
 }
 
 .head1 {
@@ -214,4 +222,12 @@ button:hover .arrow {
 .inside-panel-offset{
   padding: 1em 0;
   margin-left: -27px !important;
+}
+@media only screen and (max-width: 992px) {
+  .grid {
+    display: inline-block;
+  }
+  .repeat-border {
+    margin-top: 20px;
+  }
 }

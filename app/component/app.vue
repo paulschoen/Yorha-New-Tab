@@ -15,7 +15,7 @@
             <vue-typer
               :text='name'
               :repeat='0'
-              :typeDelay='50'
+              :typeDelay='30'
               :pre-type-delay='500'
               caret-animation='solid'></vue-typer>
             </h1>
@@ -68,6 +68,7 @@ import {
 } from 'vue-typer';
 import VueLocalStorage from 'vue-localstorage';
 import Vue from 'vue';
+import $ from 'jquery';
 
 Vue.use(VueLocalStorage)
 
