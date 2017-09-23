@@ -47,6 +47,9 @@
         <div v-if="renderMostVisitedSites" class="col-only-2">
           <TopSites  class="animated fadeIn"></TopSites>
         </div>
+          <div v-if="renderTodo" class="selection col2">
+            <Todo class="animated fadeIn"></Todo>
+          </div>
         <Bottom>
         </Bottom>
       </div>
@@ -63,6 +66,7 @@ import Modal from './modal.vue';
 import Clock from 'vue-digital-clock';
 import ToolBar from './tool-bar.vue';
 import Bottom from './footer.vue';
+import Todo from './todo.vue';
 import {
   VueTyper
 } from 'vue-typer';
@@ -96,7 +100,8 @@ export default {
       textComplete: false,
       activeTab: Vue.localStorage.get('activeTab'),
       renderNotePad: false,
-      renderMostVisitedSites: false
+      renderMostVisitedSites: false,
+      renderTodo: false
     }
   },
   created() {
@@ -124,6 +129,11 @@ export default {
       } else {
         this.renderMostVisitedSites = false
       }
+      if (activeTab === 'Todo List') {
+        this.renderTodo = true
+      } else {
+        this.renderTodo = false
+      }
       return Vue.localStorage.set('activeTab', activeTab);
     }
   },
@@ -135,6 +145,7 @@ export default {
     Modal: Modal,
     ToolBar: ToolBar,
     Bottom: Bottom,
+    Todo: Todo,
     VueTyper
   }
 }

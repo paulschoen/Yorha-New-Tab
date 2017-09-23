@@ -27,7 +27,7 @@ var tabs = [{
     active: false,
   },
   {
-    name: 'tab3',
+    name: 'Todo List',
     active: false,
   },
   // {
