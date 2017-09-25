@@ -20,10 +20,9 @@
               caret-animation='solid'></vue-typer>
             </h1>
         </div>
-        <div class="head2">
-          <div class="clock-container animated fadeIn">
-            <Clock displaySeconds=true></Clock>
-          </div>
+        <div class="head2 time-container">
+          <!-- <h1 class="clock-container animated fadeIn"> -->
+
         </div>
         <div class="col1">
           <div class="selection animated fadeInLeft bookmark-wrapper">
@@ -40,14 +39,14 @@
           </div>
         </div>
         <div class="col2">
-          <div  v-if="renderNotePad" class="selection">
+          <div  v-if="renderNotePad">
             <NotePad class="animated fadeIn"></NotePad>
           </div>
         </div>
         <div v-if="renderMostVisitedSites" class="col-only-2">
           <TopSites  class="animated fadeIn"></TopSites>
         </div>
-          <div v-if="renderTodo" class="selection col2">
+          <div v-if="renderTodo" class="col2">
             <Todo class="animated fadeIn"></Todo>
           </div>
         <Bottom>
@@ -63,10 +62,9 @@ import NotePad from './notepad.vue';
 import ListBookmarks from './list-bookmarks.vue';
 import TopSites from './top-sites.vue';
 import Modal from './modal.vue';
-import Clock from 'vue-digital-clock';
 import ToolBar from './tool-bar.vue';
 import Bottom from './footer.vue';
-import Todo from './todo.vue';
+import Todo from './Todo.vue';
 import {
   VueTyper
 } from 'vue-typer';
@@ -75,6 +73,21 @@ import Vue from 'vue';
 import $ from 'jquery';
 
 Vue.use(VueLocalStorage)
+
+function getTime() {
+  var date = new Date;
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  // var seconds = date.getSeconds();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  // seconds = seconds < 10 ? '0'+seconds : seconds;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+
+  return strTime;
+}
 
 function randomCarrot(component, text) {
   var arr = text.split('');
@@ -99,6 +112,7 @@ export default {
       name: 'New Tab',
       square: '■',
       textComplete: false,
+      time: null,
       activeTab: Vue.localStorage.get('activeTab'),
       renderNotePad: false,
       renderMostVisitedSites: false,
@@ -107,7 +121,12 @@ export default {
   },
   created() {
     this.$nextTick(function() {
-      randomCarrot(this, this.name)
+      $('.time-container').append('<h1 class="clock-container time animated fadeIn"></h1>')
+      $('.time').text(getTime());
+      randomCarrot(this, this.name);
+      setInterval(function () {
+        $('.time').text(getTime());
+      }, 1000)
     })
   },
   mounted() {
@@ -142,7 +161,7 @@ export default {
     ListBookmarks: ListBookmarks,
     NotePad: NotePad,
     TopSites: TopSites,
-    Clock: Clock,
+    // Clock: Clock,
     Modal: Modal,
     ToolBar: ToolBar,
     Bottom: Bottom,
