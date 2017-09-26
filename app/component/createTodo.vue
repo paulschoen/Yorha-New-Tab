@@ -12,11 +12,42 @@
 
 <script>
 export default{
+  data() {
+    return{
+      newTodo: '',
+      todos: ''
+    }
+  },
   methods:{
     addTodo: function(){
-      alert(this.newTodo);
+      var value = this.newTodo
+      if (!value){
+        return
+      }
+      var id = Date.now()
+      var todos = []
+      var todo ={
+        id: id,
+        name: value,
+        edit: false
+      }
+      if(!this.todos){
+        todos.push(todo)
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }else{
+        this.todos.push(todo)
+        localStorage.setItem("todos", JSON.stringify(this.todos));
+        this.newTodo = ''
+      }
+      this.$dispatch('update')
+    },
+    onload: function(){
+      this.todos = JSON.parse(localStorage.getItem("todos"));
     }
-  }
+  },
+  beforeMount(){
+    this.onload()
+  },
 
 }
 </script>
