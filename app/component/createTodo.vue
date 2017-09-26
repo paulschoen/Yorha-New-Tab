@@ -39,7 +39,7 @@ export default{
         localStorage.setItem("todos", JSON.stringify(this.todos));
         this.newTodo = ''
       }
-      this.$dispatch('update')
+      this.$emit('clicked',todo)
     },
     onload: function(){
       this.todos = JSON.parse(localStorage.getItem("todos"));

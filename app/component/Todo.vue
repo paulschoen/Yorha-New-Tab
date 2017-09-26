@@ -14,7 +14,7 @@
       </div>
     </div>
     <div v-if="renderCreateTodo" class="animated fadeIn">
-      <CreateTodo v-on:update="onload"></CreateTodo>
+      <CreateTodo @clicked="updateTodo"></CreateTodo>
     </div>
   </div>
 </template>
@@ -33,20 +33,12 @@ export default {
   components:{
     CreateTodo: CreateTodo,
   },
-  // watch:{
-  //   todos: function(){
-  //     this.todos = JSON.parse(localStorage.getItem("todos"));
-  //   }
-  // },
-  // events:{
-  //   update: function(){
-  //     this.todos = JSON.parse(localStorage.getItem("todos"));
-  //     alert('update')
-  //   }
-  // },
   methods:{
     onload: function(){
       this.todos = JSON.parse(localStorage.getItem("todos"));
+    },
+    updateTodo: function(todo){
+      this.todos.push(todo)
     }
   },
   beforeMount(){
