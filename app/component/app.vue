@@ -64,7 +64,7 @@ import TopSites from './top-sites.vue';
 import Modal from './modal.vue';
 import ToolBar from './tool-bar.vue';
 import Bottom from './footer.vue';
-import Todo from './Todo.vue';
+import Todo from './todo.vue';
 import {
   VueTyper
 } from 'vue-typer';

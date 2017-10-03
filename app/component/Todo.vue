@@ -14,13 +14,13 @@
       </div>
     </div>
     <div v-if="renderCreateTodo" class="animated fadeIn">
-      <CreateTodo @clicked="updateTodo"></CreateTodo>
+      <CreateTodo @clicked="onload"></CreateTodo>
     </div>
   </div>
 </template>
 
 <script>
-import CreateTodo from './createTodo.vue'
+import CreateTodo from './create-todo.vue'
 
 export default {
   data(){
